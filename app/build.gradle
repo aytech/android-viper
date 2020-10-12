@@ -23,6 +23,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -59,4 +64,6 @@ dependencies {
     // Cicerone
     def ciceroneVersion = "2.1.0"
     implementation "ru.terrakok.cicerone:cicerone:$ciceroneVersion"
+    // Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 }
