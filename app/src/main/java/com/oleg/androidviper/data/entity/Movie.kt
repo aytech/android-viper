@@ -2,10 +2,13 @@ package com.oleg.androidviper.data.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import com.oleg.androidviper.data.db.GenreIdConverter
 
-@Entity
+@Entity(tableName = "movies")
+@TypeConverters(GenreIdConverter::class)
 data class Movie(
     @SerializedName("vote_count")
     @Expose

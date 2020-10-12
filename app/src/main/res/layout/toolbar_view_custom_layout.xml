@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <!-- The 'AppBarLayout' object holds the 'Toolbar' and the 'TabLayout', declaring its own 'theme' (in this case, white font is used) -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_toolbar_view"
         android:layout_width="match_parent"
