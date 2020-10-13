@@ -7,17 +7,12 @@ import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.Router
 import timber.log.Timber
 
-lateinit var db: MovieDatabase
-
 class App : Application() {
     lateinit var cicerone: Cicerone<Router>
+    lateinit var db: MovieDatabase
 
     companion object {
         lateinit var INSTANCE: App
-    }
-
-    init {
-        INSTANCE = this
     }
 
     override fun onCreate() {
@@ -27,5 +22,6 @@ class App : Application() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
+        INSTANCE = this
     }
 }
