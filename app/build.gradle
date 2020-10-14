@@ -59,10 +59,6 @@ dependencies {
     // Picasso
     def picassoVersion = "2.71828"
     implementation "com.squareup.picasso:picasso:$picassoVersion"
-    // Anko
-    def anko_version = '0.10.1'
-    implementation "org.jetbrains.anko:anko:$anko_version"
-    implementation "org.jetbrains.anko:anko-commons:$anko_version"
     // Cicerone
     def ciceroneVersion = "2.1.0"
     implementation "ru.terrakok.cicerone:cicerone:$ciceroneVersion"

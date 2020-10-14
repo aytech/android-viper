@@ -1,4 +1,4 @@
-package com.oleg.androidviper
+package com.oleg.androidviper.contracts
 
 import androidx.lifecycle.LiveData
 import com.oleg.androidviper.data.entity.Movie
@@ -27,6 +27,7 @@ interface MainContract {
     }
 
     interface InteractorOutput {
+        fun onQueryEmpty()
         fun onQueryError()
         fun onQuerySuccess(data: List<Movie>)
     }

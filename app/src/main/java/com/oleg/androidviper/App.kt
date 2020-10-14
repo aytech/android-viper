@@ -2,7 +2,6 @@ package com.oleg.androidviper
 
 import android.app.Application
 import com.oleg.androidviper.data.db.MovieDatabase
-import com.squareup.picasso.BuildConfig
 import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.Router
 import timber.log.Timber

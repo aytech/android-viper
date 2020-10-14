@@ -7,16 +7,18 @@ import android.view.MenuItem
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.appcompat.widget.Toolbar
+import com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_INDEFINITE
 import com.oleg.androidviper.App
-import com.oleg.androidviper.MainContract
+import com.oleg.androidviper.contracts.MainContract
 import com.oleg.androidviper.R
+import com.oleg.androidviper.action
 import com.oleg.androidviper.data.entity.Movie
 import com.oleg.androidviper.interactor.MainInteractor
 import com.oleg.androidviper.presenter.MainPresenter
+import com.oleg.androidviper.snack
 import com.oleg.androidviper.view.adapters.MovieListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar_view_custom_layout.*
-import org.jetbrains.anko.toast
 import ru.terrakok.cicerone.Navigator
 import ru.terrakok.cicerone.Router
 import ru.terrakok.cicerone.commands.Command
@@ -76,7 +78,9 @@ class MainActivity : BaseActivity(), MainContract.View {
     }
 
     override fun showMessage(message: String) {
-        toast(message)
+        mainLayout.snack(message, LENGTH_INDEFINITE) {
+            action(getString(R.string.ok)) {}
+        }
     }
 
     override fun displayMovieList(movieList: List<Movie>) {
@@ -110,7 +114,7 @@ class MainActivity : BaseActivity(), MainContract.View {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_delete -> this.deleteMoviesClicked()
-            else -> toast(getString(R.string.error))
+            else -> mainLayout.snack(getString(R.string.error))
         }
         return super.onOptionsItemSelected(item)
     }

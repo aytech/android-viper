@@ -2,7 +2,7 @@ package com.oleg.androidviper.interactor
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
-import com.oleg.androidviper.MainContract
+import com.oleg.androidviper.contracts.MainContract
 import com.oleg.androidviper.data.MovieRepositoryImpl
 import com.oleg.androidviper.data.entity.Movie
 

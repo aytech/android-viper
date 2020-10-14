@@ -1,11 +1,11 @@
-package com.oleg.androidviper
+package com.oleg.androidviper.contracts
 
 import com.oleg.androidviper.data.entity.Movie
 
 interface AddContract {
 
     interface View {
-        fun showMessage(msg: String)
+        fun showMessage(message: String)
         fun searchMovieClicked(view: android.view.View)
         fun addMovieClicked(view: android.view.View)
     }

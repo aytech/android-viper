@@ -1,10 +1,11 @@
 package com.oleg.androidviper.presenter
 
-import com.oleg.androidviper.MainContract
+import com.oleg.androidviper.contracts.MainContract
 import com.oleg.androidviper.data.entity.Movie
 import com.oleg.androidviper.view.activities.AddMovieActivity
 import com.oleg.androidviper.view.activities.MainActivity
 import ru.terrakok.cicerone.Router
+import timber.log.Timber
 
 class MainPresenter(
     private var view: MainContract.View?,
@@ -30,12 +31,24 @@ class MainPresenter(
     override fun onViewCreated() {
         view?.showLoading()
         interactor?.loadMovieList()?.observe((view as MainActivity), { movieList ->
-            if (movieList == null) {
-                onQueryError()
-            } else {
-                onQuerySuccess(movieList)
+            Timber.d("Movies: %s", movieList)
+            when {
+                movieList == null -> {
+                    onQueryError()
+                }
+                movieList.isEmpty() -> {
+                    onQueryEmpty()
+                }
+                else -> {
+                    onQuerySuccess(movieList)
+                }
             }
         })
+    }
+
+    override fun onQueryEmpty() {
+        view?.hideLoading()
+        view?.showMessage("No movies were added")
     }
 
     override fun onQueryError() {

@@ -4,5 +4,13 @@
     <string name="network_error">Network Error. Try Again?</string>
     <string name="ok">OK</string>
     <string name="error">Error</string>
-    <string name="title_message">You must enter a title</string>
+    <string name="movie_logo">Movie logo</string>
+    <string name="add_movie_to_the_list">Add movie to the list</string>
+    <string name="title">Title</string>
+    <string name="add_movie">Add Movie</string>
+    <string name="_1995">1995</string>
+    <string name="movie_image">Movie image</string>
+    <string name="movie_title">Movie title</string>
+    <string name="search_movie">Search movie</string>
+    <string name="yes">Yes</string>
 </resources>

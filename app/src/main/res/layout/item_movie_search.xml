@@ -12,43 +12,36 @@
         android:layout_height="match_parent"
         android:paddingBottom="10dp">
 
+
         <ImageView
-            android:id="@+id/movieImageView"
+            android:id="@+id/searchImageView"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:contentDescription="@string/movie_logo"
-            android:src="@drawable/ic_local_movies_gray"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_local_movies_gray"
+            android:contentDescription="@string/movie_image" />
 
         <TextView
-            android:id="@+id/movieTitleTextView"
+            android:id="@+id/searchTitleTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="@string/movie_title"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintLeft_toRightOf="@+id/movieImageView"
+            app:layout_constraintLeft_toRightOf="@+id/searchImageView"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/movieImageView"
+            app:layout_constraintTop_toTopOf="@+id/searchImageView"
             tools:text="Movie Title" />
 
         <TextView
-            android:id="@+id/movieReleaseDateTextView"
+            android:id="@+id/searchReleaseDateTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/movieTitleTextView"
-            app:layout_constraintRight_toLeftOf="@id/checkbox"
-            app:layout_constraintTop_toBottomOf="@+id/movieTitleTextView" />
-
-        <CheckBox
-            android:id="@+id/checkbox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintLeft_toLeftOf="@+id/searchTitleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/searchTitleTextView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
