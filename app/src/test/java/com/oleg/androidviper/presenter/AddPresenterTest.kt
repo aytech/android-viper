@@ -5,7 +5,6 @@ import com.oleg.androidviper.contracts.AddContract
 import com.oleg.androidviper.data.entity.Movie
 import org.junit.Before
 
-import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
